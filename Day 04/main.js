@@ -109,7 +109,7 @@ function IsValidPassword(passPort) {
         {
             const units = obj[1].substring(obj[1].length-2);
             const tall = obj[1].substring(0,obj[1].length-2);
-            console.log(obj[1], tall)
+
             if (units == 'cm')
             {
                 if (tall <150 || tall> 193)
@@ -142,9 +142,6 @@ const output = resolve1(input);
 console.log("solucion 1", output);
 
 const input2 = parseInput(inputText2);
-
-console.log(input2.filter((x) => x.length >= 7));
-
 const output2 = resolve2(input2);
 
 console.log("solucion 2", output2);
