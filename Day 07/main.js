@@ -98,7 +98,7 @@ function resolve2(input) {
     }
     shinyBag = newArr;
   }
-
+  //TODO: incomplete, refactor
   console.log("father final", [...new Set(father.map(JSON.stringify))].map(JSON.parse));
   console.log(contar(father))
 }
