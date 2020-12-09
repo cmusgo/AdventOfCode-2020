@@ -99,21 +99,18 @@ function solveWithLineToChange(input, line) {
 }
 
 function resolve2(input) {
-  let result = resolveWithChange(input, 'jmp')
-  console.log(result)
-  if (!result.aborted)
-    result = resolveWithChange(input,'nop')
-    console.log(result)
-return result.accumulate
-
+  let result = resolveWithChange(input, "jmp");
+  console.log(result);
+  if (!result.aborted) result = resolveWithChange(input, "nop");
+  console.log(result);
+  return result.accumulate;
 }
 
-function resolveWithChange(input,operation)
-{
+function resolveWithChange(input, operation) {
   let i = 0;
   let newInput = inicializeArray(input); //.filter(n => n.executed=false);
   const jmp = input.filter((n) => n.operation == operation);
-  console.log(operation,jmp.length)
+  console.log(operation, jmp.length);
 
   let result = null;
   do {
@@ -123,10 +120,10 @@ function resolveWithChange(input,operation)
   } while (i < jmp.length && result.isInfinityLoop);
 
   return {
-      aborted: i<jmp.length,
-      accumulate: result.accumulate,
-      i:i
-  }
+    aborted: i < jmp.length,
+    accumulate: result.accumulate,
+    i: i,
+  };
 }
 
 function inicializeArray(arr) {
